@@ -11,3 +11,18 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
+
+Pour lancer le live network en local (test)
+```shell
+npx hardhat node
+```
+
+Pour lancer des scripts (directory `scripts/`)
+```shell
+npx hardhat run --network localhost scripts/interact.js
+```
+
+Pour lancer les test (directory `test/`)
+```shell
+npx hardhat test
+```
