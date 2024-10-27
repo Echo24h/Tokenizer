@@ -33,3 +33,25 @@ npx hardhat run --network localhost scripts/interact.js
 ```shell
 npx hardhat test
 ```
+
+## Deployer le token sur la blockchain
+
+Créer un fichier `.env` comme celui-ci à la racine de `code/`:
+```shell
+# Go to https://www.alchemyapi.io, sign up, create
+# a new App in its dashboard, and replace "KEY" with its key
+ALCHEMY_API_KEY=
+
+# Replace this private key with your Goerli account private key
+# To export your private key from Metamask, open Metamask and
+# go to Account Details > Export Private Key
+# Beware: NEVER put real Ether into testing accounts
+GOERLI_PRIVATE_KEY=
+```
+
+Puis éxécuter la commande suivante:
+```shell
+npx hardhat run scripts/deploy.js --network goerli
+```
+
+L'adresse du token s'affichera dans la console, il sera traçable sur https://sepolia.etherscan.io

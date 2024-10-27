@@ -24,12 +24,12 @@ describe('MyToken', function () {
   // Test cases
   it('Creates a token with a name', async function () {
     expect(await this.myToken.name()).to.exist;
-    // expect(await this.myToken.name()).to.equal('MyToken');
+    expect(await this.myToken.name()).to.equal('MyToken42');
   });
 
   it('Creates a token with a symbol', async function () {
     expect(await this.myToken.symbol()).to.exist;
-    // expect(await this.myToken.symbol()).to.equal('FUN');
+    expect(await this.myToken.symbol()).to.equal('MT42');
   });
 
   it('Has a valid decimal', async function () {
