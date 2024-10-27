@@ -12,17 +12,24 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
 
-Pour lancer le live network en local (test)
+### Pour lancer le live network en local (test)
 ```shell
 npx hardhat node
 ```
 
-Pour lancer des scripts (directory `scripts/`)
+### Pour lancer des scripts (directory `scripts/`)
+
+Deployer le contrat:
+```shell
+npx hardhat run --network localhost scripts/deploy.js
+```
+
+Puis lancer n'importe quel autre script:
 ```shell
 npx hardhat run --network localhost scripts/interact.js
 ```
 
-Pour lancer les test (directory `test/`)
+### Pour lancer les test (directory `test/`)
 ```shell
 npx hardhat test
 ```
