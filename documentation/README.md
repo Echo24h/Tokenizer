@@ -28,7 +28,7 @@ Comment déployer le projet...
 
 ### Dans le réseau local
 
-- Lancer le ***live network** en local:
+- Lancer le **live network** en local:
     ```bash
     npx hardhat node
     ```
@@ -58,7 +58,7 @@ Comment déployer le projet...
     npx hardhat run scripts/deploy.js --network goerli
     ```
 
-- L'adresse du token s'affichera dans la console, il sera traçable sur https://sepolia.etherscan.io
+- L'adresse du token s'affichera dans la console, il sera traçable sur [Etherscan](https://sepolia.etherscan.io).
 
 ## Fonctionnalités
 
@@ -82,7 +82,7 @@ Comment déployer le projet...
 
 ### En savoir plus
 
-Pour plus d'informations, vous pouvez consulter la documentation offiecielle de l'ERC20 OpenZeppelin : https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#ERC20
+Pour plus d'informations, vous pouvez consulter la documentation offiecielle de l'[ERC20 OpenZeppelin](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#ERC20).
 
 ## Test
 
