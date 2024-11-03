@@ -4,17 +4,15 @@
 3. [Déploiement](#déploiement)
 4. [Fonctionnalités](#fonctionnalités)
 5. [Test](#test)
-6. [Licence](#licence)
+6. [Script](#script)
 
 ---
 
 ## Introduction
-Cette section explique le but du projet...
 
 **⚠️ Attention** : Le projet se situe dans le dossier `./code`, en conséquence, toutes les commandes doivent être éxécuter dans `./code` et non à la racine.
 
 ## Installation
-Les étapes pour installer le projet...
 
 - **Node.js** doit être installé sur le système
 
@@ -24,7 +22,6 @@ Les étapes pour installer le projet...
     ```
 
 ## Déploiement
-Comment déployer le projet...
 
 ### Dans le réseau local
 
@@ -58,7 +55,7 @@ Comment déployer le projet...
     npx hardhat run scripts/deploy.js --network goerli
     ```
 
-- L'adresse du token s'affichera dans la console, il sera traçable sur [Etherscan](https://sepolia.etherscan.io).
+- L'adresse du token s'affichera dans la console, il sera traçable sur [TESTNET Sepolia](https://sepolia.etherscan.io).
 
 ## Fonctionnalités
 
@@ -82,7 +79,7 @@ Comment déployer le projet...
 
 ### En savoir plus
 
-Pour plus d'informations, vous pouvez consulter la documentation offiecielle de l'[ERC20 OpenZeppelin](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#ERC20).
+Pour plus d'informations, vous pouvez consulter la documentation offiecielle de l'[ERC20 OpenZeppelin](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20).
 
 ## Test
 
