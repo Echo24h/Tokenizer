@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dapp Exemple avec MetaMask SDK</title>
+  
+  <!-- Inclure le SDK MetaMask depuis le CDN -->
+  <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
+  
+  <script>
+    // Initialisation du SDK MetaMask
+    const MMSDK = new MetaMaskSDK.MetaMaskSDK({
+      dappMetadata: {
+        name: "Exemple Dapp en JS pur",
+        url: window.location.href,
+      },
+      infuraAPIKey: "votre_infura_api_key", // Clé Infura pour les appels RPC
+      // Autres options possibles
+    });
+
+    // Lancer l'initialisation avec une petite temporisation pour être sûr que tout est bien chargé
+    setTimeout(() => {
+      // Obtenir l'instance de `ethereum` via le SDK
+      const ethereum = MMSDK.getProvider();
+
+      // Connexion à MetaMask
+      async function connectToMetaMask() {
+        try {
+          const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+          console.log("Compte connecté :", accounts[0]);
+        } catch (error) {
+          console.error("Erreur lors de la connexion à MetaMask :", error);
+        }
+      }
+
+      // Appel de la fonction `connectToMetaMask` pour tester la connexion
+      connectToMetaMask();
+      
+    }, 0);
+  </script>
+</head>
+<body>
+  <h1>Dapp Exemple avec MetaMask</h1>
+  <button onclick="connectToMetaMask()">Connecter MetaMask</button>
+
+  <!-- Script pour gérer le clic du bouton -->
+  <script>
+    // Fonction qui lance la connexion au clic du bouton
+    function connectToMetaMask() {
+      ethereum.request({ method: 'eth_requestAccounts' })
+        .then(accounts => console.log("Compte connecté :", accounts[0]))
+        .catch(error => console.error("Erreur lors de la connexion :", error));
+    }
+  </script>
+</body>
+</html>
