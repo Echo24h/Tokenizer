@@ -59,3 +59,7 @@ En résumé, bien que le wallet et le token soient liés, ils ont des fonctions 
 - [Medium : Création d'un token ERC20 avec Hardhat](https://medium.com/@kaishinaw/erc20-using-hardhat-a-comprehensive-guide-3211efba98d4) — Un tutoriel pas à pas pour créer un token ERC20 avec Hardhat.
 - [(Vidéo) Création d'une Dapp avec Hardhat](https://www.youtube.com/watch?v=nNUpA0d6CFo) — (Dapp) Full Stack Ethereum Development Guide - Using Solidity, Hardhat, & ReactJS.
 - [Node.js et npm](https://nodejs.org/en/docs/) — La documentation officielle pour Node.js et son gestionnaire de paquets npm.
+
+- [Hardhat](https://hardhat.org/docs) — La documentation officielle pour Hardhat.
+
+- [Metamask](https://metamask.io/) — Un Wallet web3 qui permet de gérer ses clefs simplement.
