@@ -8,13 +8,13 @@ async function main() {
   console.log(`Deploying contract from: ${contractOwner[0].address}`);
 
   // Hardhat helper to get the ethers contractFactory object
-  const MyToken = await ethers.getContractFactory('MyToken');
+  const Token = await ethers.getContractFactory('Token');
 
   // Deploy the contract
-  console.log('Deploying MyToken...');
-  const myToken = await MyToken.deploy();
-  await myToken.deployed();
-  console.log(`MyToken deployed to: ${myToken.address}`)
+  console.log('Deploying Token...');
+  const token = await Token.deploy();
+  await token.deployed();
+  console.log(`Token deployed to: ${token.address}`)
 }
 
 main()
