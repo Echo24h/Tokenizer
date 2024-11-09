@@ -58,6 +58,20 @@
 
 ### Pour déployer dans le réseau blockchain Georli
 
+- Ajouter le network dans `module.export` du fichier `hardhat.config.js`:
+    ```javascript
+    // hardhat.config.js
+    module.exports = {
+        solidity: "0.8.27",
+        networks: {
+            goerli: {
+            url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
+            accounts: [process.env.GOERLI_PRIVATE_KEY]
+            }
+        }
+    };
+    ```
+
 - Exécuter la commande suivante:
     ```bash
     npx hardhat run scripts/deploy.js --network goerli
@@ -67,43 +81,36 @@
 
 ## Fonctionnalités
 
-- **`name()`** :
+- **`name()`** : Retourne le nom du token.
 
-- **`symbol()`** :
+- **`symbol()`** : Retourne le symbol du token.
 
-- **`decimals()`** :
+- **`decimals()`** : Renvoie le nombre de décimales du token.
 
-- **`totalSupply()`** :
+- **`totalSupply()`** : Retourne le nombre de tokens existants.
 
-- **`balanceOf(account)`** :
+- **`balanceOf(account)`** : Retourne le nombre de tokens détenus par le compte.
 
-- **`transfer(recipient, amount)`** :
+- **`transfer(recipient, amount)`** : Transfert le montant de token du compte de l’appelant vers le destinataire.
 
-- **`allowance(owner, spender)`** :
+- **`allowance(owner, spender)`** : Retourne le nombre restant de tokens que le compte sera autorisé à dépenser au nom du propriétaire via transferFrom(). C'est zéro par défaut.
 
-- **`approve(spender, amount)`** :
+- **`approve(spender, amount)`** : Définit le montant autorisé à dépenser du compte sur les tokens de l'appelant.
 
-- **`transferFrom(sender, recipient, amount)`** :
+- **`transferFrom(sender, recipient, amount)`** : Transfère le montant de tokens de l'expéditeur au destinataire à l'aide du mécanisme d'allocation approve(). Le montant est ensuite déduit de l’allocation de l’appelant.
 
-- **`mint(amount)`** :
+- **`mint(amount)`** : Fabrique une quantité de tokens.
 
-- **`burn(amount)`** :
+- **`burn(amount)`** : Détruit une quantité de tokens.
 
 ### En savoir plus
 
 Pour plus d'informations, vous pouvez consulter la documentation offiecielle de l'[ERC20 OpenZeppelin](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20).
 
-## Test
-
-- Les tests peuvent être modifier dans le fichier `test/Token.test.js`, ensuite ils peuvent être effectué avec la commande suivante :
-    ```bash
-    npx hardhat test
-    ```
-
 ## Script
 
-- Il est également possible de créer des scripts, un exemple est inclus dans le dossier `scripts/` et peut être exécuté avec la commande suivante :
+- Il est également possible de créer des scripts, un exemple de test token est inclus dans le dossier `scripts/` et peut être exécuté avec la commande suivante :
     ```bash
-    npx hardhat run --network localhost scripts/interact.js
+    npx hardhat run --network localhost scripts/test.js
     ```
-**⚠️ Attention** : Il est nécessaire de remplacer l'adresse du contrat token par le concerné dans le script.
+**⚠️ Attention** : Pour l'exemple `test.js`, il est nécessaire de remplacer l'adresse du contrat token par le concerné dans le `.env`.

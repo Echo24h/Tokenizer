@@ -32,7 +32,7 @@ Plusieurs raisons justifient ce choix :
 
 3. **Portabilité et ressources** : La grande quantité de ressources disponibles en ligne sur Hardhat, combinée à mes connaissances en Node.js, en fait un choix idéal pour un premier projet blockchain.
 
-Ainsi, la combinaison d'Ethereum et de Hardhat répond parfaitement à besoins pour apprendre sur un premier projet blockchain.
+Ainsi, la combinaison d'Ethereum et de Hardhat répond parfaitement à mes besoins pour apprendre sur un premier projet blockchain.
 
 ## Définitions
 

@@ -1,13 +1,12 @@
 // scripts/interact.js
 const { ethers } = require("hardhat");
+const { expect } = require('chai');
 require('dotenv').config();
 
 async function main() {
 
     CYAN = '\x1b[36m%s\x1b[0m';
     YELLOW = '\x1b[33m%s\x1b[0m';
-    GREEN = '\x1b[32m%s\x1b[0m';
-    RED = '\x1b[31m%s\x1b[0m';
 
     console.log(YELLOW, 'Getting the token contract...');
     const contractAddress = process.env.TOKEN_ADDRESS;
@@ -106,6 +105,6 @@ async function main() {
 main()
     .then(() => process.exit(0))
     .catch((error) => {
-        console.error(RED, error);
+        console.error(error);
         process.exitCode = 1;
     });
