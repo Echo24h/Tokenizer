@@ -1,5 +1,5 @@
 # Tokenizer
-Ce projet permet d'apprendre les bases du web3 en créant un token sur une blockchain.
+Ce projet permet d'apprendre les bases du [web3](https://fr.wikipedia.org/wiki/Web3) en créant un token sur une [blockchain](https://fr.wikipedia.org/wiki/Blockchain). 
 
 **⚠️ Attention** : Vous n'aurez jamais besoin d'utiliser de l'argent réel pour ce projet. Des blockchains de test sont disponibles pour éviter tout risque financier.
 
@@ -28,9 +28,9 @@ Pour le développement de cet exercice, j'ai opté pour l'utilisation de Hardhat
 
 Plusieurs raisons justifient ce choix :
 
-1. **Ethereum** : Cette blockchain bénéficie d'un écosystème riche et d'une large communauté, offrant une solide base de ressources et de soutien pour le développement.
+1. [**Ethereum**](https://fr.wikipedia.org/wiki/Ethereum) : Cette blockchain bénéficie d'un écosystème riche et d'une large communauté, offrant une solide base de ressources et de soutien pour le développement.
 
-2. **Hardhat** : Cet outil de développement en console est compatible avec Node.js et s'intègre parfaitement dans mon environnement de travail, VSCode. Son utilisation est donc fluide et accessible.
+2. [**Hardhat**](https://hardhat.org) : Cet outil de développement en console est compatible avec Node.js et s'intègre parfaitement dans mon environnement de travail, VSCode. Son utilisation est donc fluide et accessible.
 
 3. **Portabilité et ressources** : La grande quantité de ressources disponibles en ligne sur Hardhat, combinée à mes connaissances en Node.js, en fait un choix idéal pour un premier projet blockchain.
 
@@ -41,12 +41,12 @@ Ainsi, la combinaison d'Ethereum et de Hardhat répond parfaitement à mes besoi
 ### Le Token
 
 - **Qu'est-ce que c'est ?** Un token est un contrat déployé sur une blockchain (comme Ethereum) qui suit un ensemble standard de règles pour la création et la gestion des tokens fongibles (c'est-à-dire interchangeables, comme des pièces de monnaie).
-- **ERC20 :** l'ERC20 est une standardisation. Les tokens ERC20 respectent un ensemble de fonctions et d'événements standardisés, tels que `name()`, `symbol()`, `decimals()`, `totalSupply()`, `balanceOf()`, `transfer()`, etc. Cela permet à tout token ERC20 d'être compatible avec les portefeuilles, les exchanges et d'autres contrats intelligents qui prennent en charge ce standard.
+- [**ERC20 :**](https://fr.wikipedia.org/wiki/ERC20) l'ERC20 est une standardisation. Les tokens ERC20 respectent un ensemble de fonctions et d'événements standardisés, tels que `name()`, `symbol()`, `decimals()`, `totalSupply()`, `balanceOf()`, `transfer()`, etc. Cela permet à tout token ERC20 d'être compatible avec les portefeuilles, les exchanges et d'autres contrats intelligents qui prennent en charge ce standard.
 - **Exemples :** Des tokens bien connus tels que **USDT (Tether)**, **LINK (Chainlink)**, et **UNI (Uniswap)** sont des tokens ERC20.
 
 ### Le Wallet
 
-- **Qu'est-ce que c'est ?** Un wallet (ou portefeuille) permet aux utilisateurs de gérer leurs clés privées pour accéder à leurs adresses sur la blockchain, où sont stockés les tokens et cryptomonnaies. Il permet aux utilisateurs d'envoyer, de recevoir et de gérer leurs actifs numériques.
+- **Qu'est-ce que c'est ?** [Un wallet (ou portefeuille)](https://fr.wikipedia.org/wiki/Portefeuille_de_crypto-monnaie) permet aux utilisateurs de gérer leurs clés privées pour accéder à leurs adresses sur la blockchain, où sont stockés les tokens et cryptomonnaies. Il permet aux utilisateurs d'envoyer, de recevoir et de gérer leurs actifs numériques.
 - **Multisignature :** Un wallet multisignature nécessite plusieurs signatures pour autoriser une transaction, renforçant ainsi la sécurité en demandant l'approbation de plusieurs parties.
 - **Exemple :** Imaginez une entreprise qui détient des fonds sur un portefeuille blockchain. Pour toute dépense ou transfert, au moins 3 des 5 membres du conseil doivent approuver la transaction. Cela évite qu'une seule personne ne puisse détourner les fonds.
 
@@ -59,6 +59,8 @@ En résumé, bien que le wallet et le token soient liés, ils ont des fonctions 
 ## Ressources
 
 - [Medium : Création d'un token ERC20 avec Hardhat](https://medium.com/@kaishinaw/erc20-using-hardhat-a-comprehensive-guide-3211efba98d4) — Un tutoriel pas à pas pour créer un token ERC20 avec Hardhat.
+
+- [Medium : Multisig Wallet Tutoriel (Pour le BONUS)](https://medium.com/buildbear/learn-how-to-build-a-multisig-wallet-with-hardhat-and-typescript-e240e1671f8c) — Learn how to build a Multisig wallet with hardhat and typescript
 - [(Vidéo) Création d'une Dapp avec Hardhat](https://www.youtube.com/watch?v=nNUpA0d6CFo) — (Dapp) Full Stack Ethereum Development Guide - Using Solidity, Hardhat, & ReactJS.
 - [Node.js et npm](https://nodejs.org/en/docs/) — La documentation officielle pour Node.js et son gestionnaire de paquets npm.
 
