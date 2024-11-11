@@ -10,11 +10,14 @@ async function main() {
 
     // --- Setup ---
 
+    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+
     console.log(YELLOW, 'Getting the token contract...');
     const token = await ethers.getContractAt('Token', contractAddress);
 
-    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+    
     const signers = await ethers.getSigners();
+    console.log(signers);
     const ownerAddress = signers[0].address;
     const recipientAddress = signers[1].address;
     const signerContract = token.connect(signers[1]); // Creates a new instance of the contract connected to the recipient
