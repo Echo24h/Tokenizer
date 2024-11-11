@@ -10,7 +10,13 @@ node -v # should print `v22.11.0`
 npm -v # should print `10.9.0`
 ```
 
-Si NVM ne se charge pas automatiquement, exécutez ceci :
+Si node et npm ne sont pas dans le bonne version, mettez les a jour :
+
+```shell
+nvm install --lts
+```
+
+Si NVM ne s'export pas automatiquement, exécutez ceci :
 
 ```shell
 export NVM_DIR="$HOME/.nvm"                                                    

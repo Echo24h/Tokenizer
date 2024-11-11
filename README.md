@@ -11,9 +11,11 @@ Ce projet permet d'apprendre les bases du web3 en créant un token sur une block
 
 ## Le Token
 
-Pour traçer le token et observer sont activité, vous pouvez vous rendre sur [TESTNET Sepolia](https://sepolia.etherscan.io).
+Pour traçer le token et observer sont activité, vous pouvez vous rendre sur [TESTNET Sepolia](https://sepolia.etherscan.io/token/0xdd6D80291E74c26eB4EbC2BB0571B3e75bF15aF5).
 
-L'adresse du **Token42 (T42)** est: **0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266**
+L'adresse du **Token42 (T42)** est: **0xdd6D80291E74c26eB4EbC2BB0571B3e75bF15aF5**
+
+L'adresse du createur est : **0x557aC70aED435EC5D57aDe234CbB2a95561aF898**
 
 ## Documentation
 

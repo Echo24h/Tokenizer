@@ -1,16 +1,26 @@
-// scripts/interact.js
 const { ethers } = require("hardhat");
-const { expect } = require('chai');
 require('dotenv').config();
 
 async function main() {
 
     CYAN = '\x1b[36m%s\x1b[0m';
     YELLOW = '\x1b[33m%s\x1b[0m';
+    RED = '\x1b[31m%s\x1b[0m';
+
+
+    // --- Setup ---
 
     console.log(YELLOW, 'Getting the token contract...');
-    const contractAddress = process.env.TOKEN_ADDRESS;
     const token = await ethers.getContractAt('Token', contractAddress);
+
+    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+    const signers = await ethers.getSigners();
+    const ownerAddress = signers[0].address;
+    const recipientAddress = signers[1].address;
+    const signerContract = token.connect(signers[1]); // Creates a new instance of the contract connected to the recipient
+
+
+    // --- Test the contract ---
 
     // name()
     console.log(CYAN, 'name()');
@@ -39,15 +49,12 @@ async function main() {
     // balanceOf(address account)
     console.log(CYAN, 'balanceOf(address account)');
     console.log('Getting the balance of contract owner...');
-    const signers = await ethers.getSigners();
-    const ownerAddress = signers[0].address;
     let ownerBalance = await token.balanceOf(ownerAddress);
     console.log(`Contract owner at ${ownerAddress} has a ${symbol} balance of ${ethers.utils.formatUnits(ownerBalance, decimals)}\n`);
 
     // transfer(to, amount)
     console.log(CYAN, 'transfer(to, amount)');
     console.log('Initiating a transfer...');
-    const recipientAddress = signers[1].address;
     const transferAmount = 1;
     console.log(`Transferring ${transferAmount} ${symbol} tokens to ${recipientAddress} from ${ownerAddress}`);
     await token.transfer(recipientAddress, ethers.utils.parseUnits(transferAmount.toString(), decimals));
@@ -62,7 +69,6 @@ async function main() {
     console.log(`Setting allowance amount of spender over the caller\'s ${symbol} tokens...`);
     const approveAmount = 1;
     console.log(`This example allows the contractOwner to spend up to ${approveAmount} of the recipient\'s ${symbol} token`);
-    const signerContract = token.connect(signers[1]); // Creates a new instance of the contract connected to the recipient
     await signerContract.approve(ownerAddress, ethers.utils.parseUnits(approveAmount.toString(), decimals));
     console.log(`Spending approved\n`);
 
@@ -105,6 +111,6 @@ async function main() {
 main()
     .then(() => process.exit(0))
     .catch((error) => {
-        console.error(error);
+        console.error(RED, error);
         process.exitCode = 1;
     });

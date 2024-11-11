@@ -3,8 +3,7 @@
 2. [Installation](#installation)
 3. [Déploiement](#déploiement)
 4. [Fonctionnalités](#fonctionnalités)
-5. [Test](#test)
-6. [Script](#script)
+5. [Script](#script)
 
 ---
 
@@ -23,9 +22,11 @@
 
 ## Déploiement
 
+**Si vous souhaitez deployer le token en public**, il seras necessaire de creer un compte et une app sur [Alchemy](https://www.alchemyapi.io) ainsi qu'un compte [Metamask](https://metamask.io/).
+
 - Dans le fichier `.env` du dossier `./code/`, ajoutez et configurez ceci:
     ```bash
-    # ---- PUBLIC ----
+    # ---- PUBLIC ONLY ----
 
     # Go to https://www.alchemyapi.io, sign up, create
     # a new App in its dashboard, and replace "KEY" with its key
@@ -36,12 +37,6 @@
     # go to Account Details > Export Private Key
     # Beware: NEVER put real Ether into testing accounts
     GOERLI_PRIVATE_KEY="PRIVATE_KEY"
-
-    # ---- LOCALHOST ----
-
-    # Replace this address with the contract address of the token owner
-    # If you are in localhost this address is given during deployment
-    TOKEN_ADDRESS="ADRESS"
     ```
 
 ### Pour déployer dans le réseau local
@@ -57,6 +52,8 @@
     ```
 
 ### Pour déployer dans le réseau blockchain Georli
+
+**⚠️ Attention** : Il est nécessaire de posséder des Sepolia Ether (ETH de test) pour déployer le token en public. J'ai pu en recevoir **gratuitement** ici, avec une adresse totalement vide, sans Ethereum : [Google Cloud Web3](https://cloud.google.com/application/web3/faucet/ethereum/sepolia).
 
 - Ajouter le network dans `module.export` du fichier `hardhat.config.js`:
     ```javascript
@@ -111,6 +108,10 @@ Pour plus d'informations, vous pouvez consulter la documentation offiecielle de 
 
 - Il est également possible de créer des scripts, un exemple de test token est inclus dans le dossier `scripts/` et peut être exécuté avec la commande suivante :
     ```bash
-    npx hardhat run --network localhost scripts/test.js
+    # Network : Localhost
+    npx hardhat run --network localhost scripts/test_local.js
+
+    # Network : Georli (blockchain public)
+    npx hardhat run --network goerli scripts/test_public.js 
     ```
-**⚠️ Attention** : Pour l'exemple `test.js`, il est nécessaire de remplacer l'adresse du contrat token par le concerné dans le `.env`.
+**⚠️ Attention** : Pour les exemples `test_[...].js`, il est nécessaire de remplacer les adresses du contrat token et utilisateurs.
